@@ -16,7 +16,7 @@ Traditional fitness apps require you to upload your personal biometrics, weight,
 3. **Hyper-Localized Nutrition:** We embedded a custom food dictionary sourced directly from the official **Kenya Food Composition Tables (FAO & Ministry of Health)**. You can calculate nutrition metrics for local staples like *Ugali, Sukuma Wiki, Managu, Terere,* and *Omena* instantly, offline, and without sending lookup queries over the network.
 
 
-## 🛠️ System Architecture
+##  System Architecture
 
 Our design partitions the system into three simple layers:
 +-------------------------------------------------+
