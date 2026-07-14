@@ -18,29 +18,32 @@ Traditional fitness apps require you to upload your personal biometrics, weight,
 
 ##  System Architecture
 
-Our design partitions the system into three simple layers:
-+-------------------------------------------------+
-              |         CLIENT-SIDE BROWSER ENCLAVE (Edge)      |
-              |                                                 |
-              |   [ ReactJS UI ] <---> [ Web Crypto API ]       |
-              |    Render screens       PBKDF2 Key Derivation   |
-              |    & Local FAO Dict     Symmetric AES-256-GCM   |
-              |          ^                      ^               |
-              +----------|----------------------|---------------+
-                         |                      |
-                         v                      v
-              +-------------------------------------------------+
-              |      SECURE CLIENT STORAGE (IndexedDB)          |
-              |   - Non-extractable CryptoKeys (Access Locked)  |
-              +-------------------------------------------------+
-                                        |
-                              HTTPS/TLS Ciphertext
-                                        v
-              +-------------------------------------------------+
-              |         BLIND CLOUD STORAGE (MongoDB Atlas)      |
-              |   - Stores opaque, encrypted Base64 strings     |
-              |   - No decryption logic on the server           |
-              +-------------------------------------------------+
+Our design partitions the system into three simple layers[cite: 1, 2]:
+
+```text
+                  +-------------------------------------------------+
+                  |         CLIENT-SIDE BROWSER ENCLAVE (Edge)      |
+                  |                                                 |
+                  |   [ ReactJS UI ] <---> [ Web Crypto API ]       |
+                  |    Render screens       PBKDF2 Key Derivation   |
+                  |    & Local FAO Dict     Symmetric AES-256-GCM   |
+                  |          ^                      ^               |
+                  +----------|----------------------|---------------+
+                             |                      |
+                             v                      v
+                  +-------------------------------------------------+
+                  |      SECURE CLIENT STORAGE (IndexedDB)          |
+                  |   - Non-extractable CryptoKeys (Access Locked)  |
+                  +-------------------------------------------------+
+                                            |
+                                  HTTPS/TLS Ciphertext
+                                            v
+                  +-------------------------------------------------+
+                  |         BLIND CLOUD STORAGE (MongoDB Atlas)      |
+                  |   - Stores opaque, encrypted Base64 strings     |
+                  |   - No decryption logic on the server           |
+                  +-------------------------------------------------+
+```
 
 
 ### Key Technical Choices & Trade-offs
