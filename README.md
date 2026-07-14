@@ -1,4 +1,4 @@
-# LisheSafi-WebAPP-
+# LisheSafiWebAPP
 # LisheSafi 🇰🇪
 ### APT3065: Web Application Development — Midterm Project
 **United States International University-Africa (USIU-Africa)**
