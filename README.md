@@ -18,7 +18,7 @@ Traditional fitness apps require you to upload your personal biometrics, weight,
 
 ##  System Architecture
 
-Our design partitions the system into three simple layers[cite: 1, 2]:
+Our design partitions the system into three simple layers:
 
 ```text
                   +-------------------------------------------------+
