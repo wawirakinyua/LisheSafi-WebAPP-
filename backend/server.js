@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/foods', require('./routes/foodRoutes'));
+app.use('/api/meals', require('./routes/mealRoutes'));
 
 // 4. Database Connection
 const PORT = process.env.PORT || 5000;
